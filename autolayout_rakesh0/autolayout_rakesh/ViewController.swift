@@ -38,70 +38,14 @@ class ViewController: UIViewController {
         return textView
     }()
     
-    let previousButton:UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Prev", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.gray, for: .normal)
-        return button
-    }()
-    
-    let nextButton:UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Next", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.purple, for: .normal)
-
-        return button
-    }()
-    
-    let pageController:UIPageControl = {
-       let  pageControl = UIPageControl()
-        pageControl.currentPage = 0
-        pageControl.numberOfPages = 4
-        pageControl.currentPageIndicatorTintColor = .red
-        pageControl.pageIndicatorTintColor = .gray
-        return pageControl
-    }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // here's our entry point into our app
         //view.addSubview(bearImageView)
         view.addSubview(descriptionTextView)
-        setupBottonControl()
+        
         setupLayout()
-    }
-    
-    func setupBottonControl(){
-        //view.addSubview(previousButton)
-        //previousButton.backgroundColor = .red
-        
-//        let yellowView = UIView()
-//        yellowView.backgroundColor = .yellow
-        let greenView = UIView()
-        greenView.backgroundColor = .green
-//        let redView = UIView()
-//        redView.backgroundColor = .red
-        
-        let bottomControlStackView = UIStackView(arrangedSubviews: [previousButton,pageController,nextButton])
-        bottomControlStackView.translatesAutoresizingMaskIntoConstraints = false
-        bottomControlStackView.distribution = .fillEqually
-        view.addSubview(bottomControlStackView)
-        
-        // no need every time add .isActive
-        NSLayoutConstraint.activate([
-           
-            bottomControlStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            bottomControlStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            bottomControlStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            bottomControlStackView.heightAnchor.constraint(equalToConstant: 50)
-            
-            
-            ])
     }
 
     func setupLayout(){
