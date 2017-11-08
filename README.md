@@ -1,5 +1,6 @@
 # autolayout_swift4
-swift 4 autolayout with code
+swift 4 autolayout sample code
+
 This sample code work on swift 4 and set autolayout constraint in code section.
 First   part of Project  is autolayout_rakesh0 .  
 Second  part of Project  is autolayout_rakesh .  
